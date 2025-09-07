@@ -52,5 +52,5 @@ Exemplo de JSON para criação/atualização
 ```
 
 Testes e documentação
-- Use Postman ou similar para testar os endpoints (Pasta com a Collection com endpoints localizada na pasta postsman).
+- Use Postman ou similar para testar os endpoints (Pasta com a Collection com endpoints localizada na pasta postman).
 - A dependência `springdoc-openapi` adiciona automaticamente uma UI Swagger em /swagger-ui.html.
