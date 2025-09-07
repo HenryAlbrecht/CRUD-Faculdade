@@ -1,15 +1,24 @@
 # Tarefas API
 
-API RESTful para gerenciamento de tarefas — implementação de exemplo para a atividade prática.
+API RESTful para gerenciamento de tarefas.
 
 Principais features
 - CRUD completo para entidade Tarefa (id, nome, dataEntrega, responsavel)
 - Spring Boot + Spring Data JPA
 - MySQL (configuração em `src/main/resources/application.yml`)
-- Documentação OpenAPI (UI disponível em /swagger-ui.html quando em execução)
+
+Tecnologias usadas
+------------------
+- Java 21: versão LTS.
+- Spring Boot 3: framework para aplicações Java.
+- MySQL (Connector/J): banco relacional usado em produção/avaliação (configurado em `application.yml`).
+- Lombok: reduz boilerplate com anotações (`@Getter`, `@Setter`, `@RequiredArgsConstructor`, `@Data`).
+- Maven: sistema de build e gerenciamento de dependências.
+- Postman: para testar e documentar as chamadas da API (coleção em `postman/`).
+
 
 Como rodar
-1. Configure um banco MySQL local e atualize as credenciais em `application.yml`.
+1. Configure um banco MySQL local e atualize as credenciais em `application.yml`, deixei a configuração para auto-criar o db tarefas_db no localhost:3306.
 2. Build e execute com Maven:
 
 ```bash
@@ -18,7 +27,7 @@ mvn spring-boot:run
 ```
 
 Maven Wrapper (opcional)
-Para garantir que outros desenvolvedores possam rodar o projeto sem instalar o Maven globalmente, gere o Maven Wrapper localmente com:
+Para rodar o projeto sem instalar o Maven globalmente, gere o Maven Wrapper localmente com:
 
 ```bash
 mvn -N io.takari:maven:wrapper
@@ -38,14 +47,10 @@ Exemplo de JSON para criação/atualização
 {
   "nome": "Estudar para prova",
   "dataEntrega": "2025-09-20",
-  "responsavel": "Henrique"
+  "responsavel": "Henrique Ferreira Albrecht - RU 4653204"
 }
 ```
 
 Testes e documentação
 - Use Postman ou similar para testar os endpoints.
 - A dependência `springdoc-openapi` adiciona automaticamente uma UI Swagger em /swagger-ui.html.
-
-Observações
-- Segui as instruções da atividade e as diretrizes do projeto (camadas controller/service/repository/model).
-- Para desenvolvimento rápido sem MySQL, altere a URL do datasource para usar H2 (ou configure um profile `dev`).

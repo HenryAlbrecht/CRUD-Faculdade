@@ -23,5 +23,3 @@ management:
     web:
       exposure:
         include: health,info
-
-# Notes: you can override these in application-dev.yml or via environment variables
